@@ -1,13 +1,21 @@
 const { model, Schema } = require('mongoose');
-
+//estructura de los datos
 const UserSchema = new Schema({
-    email: {
+    email:{
         type: String,
         required: true
     },
-    pasword: {
+    password:{
         type: String,
         required: true
+    },
+    role:{
+        type: String,
+        required: true
+    },
+    activo:{
+        type: Boolean,
+        default: true
     }
 });
 

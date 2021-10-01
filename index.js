@@ -1,9 +1,14 @@
 const express = require('express');
-require("dotenv").config()
-require("./connection");
+const morgan = require('morgan');
+
+//inicializaciones
 const app  = express();
+require("dotenv").config();
+require("./connection");
+
 
 // middlewares//
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
