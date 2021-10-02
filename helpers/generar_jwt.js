@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-
+require("dotenv").config();
 const generate_jwt = (id = '') => {
 
     return new Promise((resolve, reject) => {

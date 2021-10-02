@@ -30,7 +30,7 @@ body('role','no existe rol')
 .custom(existeRol),
 validarCampo,
 rutaPost)
-
+/***/
 
 //rute login user
 
@@ -42,15 +42,13 @@ router.get('/api/get-user',validar_jwt, verficarAdmin, rutaGet)
 
 
 //  route for a delete user :ID of database
-router.delete('/api/delete-user/:id',
-body('id','La id no es valida').isMongoId(), 
+router.delete('/api/delete-user/:id', 
 validar_jwt,
 verficarAdmin,
  rutaDelete)
 
 // route for logical delete user :id 
-router.put( 'api/delete-user-logical/:id', 
-body('id','La id no es valida').isMongoId(),
+router.put( '/api/delete-user-logical/:id',
 validar_jwt, 
 verficarAdmin,
 logicalRutaDelete)
@@ -62,7 +60,6 @@ verficarAdmin,
 body('email','El Email es incorrecto').isEmail(),
 body('password','el password debe contener 4 caracteres').isLength({min: 4}),
 body('role', 'El rol no es valido').custom(existeRol),
-body('id','La id no es valida').isMongoId(),
 validarCampo,
  rutaPut)
 
